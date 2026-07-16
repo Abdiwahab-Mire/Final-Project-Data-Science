@@ -66,11 +66,12 @@ Plaintext
 │   └── final/                # Cleaned, merged master dataset
 ├── notebooks/                # Jupyter Notebooks for EDA and testing
 ├── src/                      # Source code modules
-│   ├── stage1_organize.py    # Classification and renaming script
-│   ├── stage2_convert.py     # CSV extraction script
-│   ├── stage3_aggregate.py   # Household aggregation & person-time script
-│   ├── stage4_merge.py       # Final dataset preparation script
+│   ├── ml_pipline .py             y    # Classification and renaming script
+│   ├── organize_surveys.py     # CSV extraction script
+│   ├── process_households  # Household aggregation & person-time script
+│   ├── merge_surveys.py       # Final dataset preparation script
 │   └── train_models.py       # ML training and evaluation script
+        selected_model.py
 ├── outputs/                  # Saved models, confusion matrix figures, and evaluation tables
 ├── requirements.txt          # Python dependencies
 └── README.md                 # Project documentation
@@ -100,16 +101,16 @@ Run the pipeline sequentially using the scripts in src/:
 
 Bash
 # Stage 1: Classify and organize survey files
-python src/stage1_organize.py
+ml_pipline.py
 
 # Stage 2: Extract survey sections to CSV
-python src/stage2_convert.py
+organize_survery.py
 
 # Stage 3: Compute household metrics & person-time
-python src/stage3_aggregate.py
+process_households.py
 
 # Stage 4: Merge final dataset
-python src/stage4_merge.py
+merge_surveys.py
 
 # Train models and generate evaluation metrics
 python src/train_models.py
